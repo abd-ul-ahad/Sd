@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../Components/Footer';
+import Navbar from "../Components/Navbar";
 import LoadingBar from 'react-top-loading-bar'
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
@@ -25,6 +27,7 @@ function MyApp({ Component, pageProps }) {
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
+      <Navbar />
       <Component {...pageProps} />
       <Footer />
     </>

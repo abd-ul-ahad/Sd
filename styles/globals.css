@@ -4,6 +4,7 @@
 @import url("./Features-Cards.css");
 @import url("./home..css");
 @import url("./belowNav.css");
+@import url("./navbar.css");
 
 :root {
   --light-grey: #f3f5f8;
@@ -34,7 +35,3 @@ h3,
 h1 {
   margin: 0 !important;
 }
-
-
-
-

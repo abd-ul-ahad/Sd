@@ -1,4 +1,6 @@
-import React from 'react'
+import Button from '@mui/material/Button';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import Link from "next/link"
 
 export default function Navbar() {
   const openCloseMenu = () => {
@@ -11,7 +13,35 @@ export default function Navbar() {
   }
   return (
     <>
-
+      <div className="nav-div" id="_nav-div">
+        <ul id="nav-list">
+          <li>
+            <Link href='/'><a>
+              <img id="logo" className="navbar-brand" src={'/images/home/logo.png'} alt="SayabiDevs Logo" />
+            </a></Link>
+          </li>
+          <li>
+            <Link href='/'><a>
+              <Button variant="contained">Home</Button>
+            </a></Link>
+          </li>
+          <li>
+            <Link href='/services'><a>
+              <Button variant="contained">Services</Button>
+            </a></Link>
+          </li>
+          <li>
+            <Link href='/career'><a>
+              <Button variant="contained">Career</Button>
+            </a></Link>
+          </li>
+          <li>
+            <a href="#" className="menu-icon" onClick={openCloseMenu}>
+              <MenuRoundedIcon style={{ color: "#E71B1E" }} />
+            </a>
+          </li>
+        </ul>
+      </div>
     </>
   )
 }
