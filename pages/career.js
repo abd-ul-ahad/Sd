@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { CgSmartphoneChip } from "react-icons/cg";
 import { FaQuestion } from "react-icons/fa";
 import Head from "next/head";
-import { Image } from 'react-bootstrap';
+import { VacancyPanel, CoreValuesPanel } from "../Components/DisplayPanels";
 
 
 export default function Career() {
@@ -30,7 +30,7 @@ export default function Career() {
   ]
   return (
     <div>
-       <Head>
+      <Head>
         <title>Career | SayabiDevs</title>
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
@@ -65,21 +65,8 @@ export default function Career() {
             </Col>
 
             {coreValues.map((e, i) => {
-              return (
-                <Col key={i} md={7} className={`${styles.coreWrap} ${styles.bgLightGrey} d-flex justify-content-center align-items-center my-3`}>
-                  <Row className="d-flex justify-content-center align-items-center">
-                    <Col md={2} className="d-flex justify-content-center align-items-center">
-                      <Image src={e.imgSrc} height={64} width={64} alt="client Expectations" />
-                    </Col>
-                    <Col md={10} className="d-flex justify-content-center align-items-center">
-                      <p className="fw-bold">{e.desc}</p>
-                    </Col>
-                  </Row>
-                </Col>
-              )
+              return <CoreValuesPanel key={i} imgSrc={e.imgSrc} desc={e.desc} />
             })}
-
-
 
           </Row>
 
@@ -111,30 +98,18 @@ export default function Career() {
 
         <Row className="d-flex justify-content-center align-items-center">
 
-
           {/*  */}
           {vacancies.map((e, i) => {
-            return (
-              <Col key={i} md={11} className="my-4">
-                <div className={`${styles.vacancyWrap} px-5 py-4`} >
-                  <Row>
-                    <Col md={4} >
-                      <h5 className={`${styles.vacancyTitle} my-3`}>{e.title}</h5>
-                      <p className="my-2"><span className="fw-bold">Job Type</span>: {e.jobType}</p>
-                      <p className="my-2"><span className="fw-bold">Work Experience</span>: {e.workExp}</p>
-                      <p className="my-2"><span className="fw-bold">Date Opened</span>: {e.dateOpened}</p>
-                    </Col>
-                    <Col md={5} >
-                      <p className="my-3"><span className="fw-bold">Job Description</span>:<br />{e.jobDesc}</p>
-                      <p className="my-2"><span className="fw-bold">Remote Job</span>: {e.remoteJob}</p>
-                    </Col>
-                    <Col md={3} className="d-flex justify-content-md-center justify-content-sm-start align-items-center" >
-                      <button className={`${styles.applyBtn} my-4`}>Apply</button>
-                    </Col>
-                  </Row>
-                </div>
-              </Col>
-            )
+            return <VacancyPanel
+              key={i}
+              title={e.title}
+              jobType={e.jobType}
+              workExp={e.workExp}
+              dateOpened={e.dateOpened}
+              jobDesc={e.jobDesc}
+              remoteJob={e.remoteJob}
+            />
+
           })}
           {/*  */}
         </Row>
