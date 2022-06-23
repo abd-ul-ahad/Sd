@@ -33,7 +33,7 @@ export default function Home() {
       <div className="row" style={{ padding: "0 5%" }}>
         <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
           <Image
-            src={'/images/home/facebook-left.jpg'}
+            src={'/images/home/dummyImage.png'}
             className="w-100 shadow-1-strong rounded mb-4 shadowCustom"
             alt="Boat on Calm Water"
           />
@@ -41,7 +41,7 @@ export default function Home() {
 
         <div className="col-lg-4 mb-4 mb-lg-0">
           <Image
-            src={'/images/home/whatsapp-mid.png'}
+            src={'/images/home/dummyImage.png'}
             className="w-100 shadow-1-strong rounded mb-4 shadowCustom"
             alt="Boat on Calm Water"
           />
@@ -49,7 +49,7 @@ export default function Home() {
 
         <div className="col-lg-4 mb-4 mb-lg-0">
           <Image
-            src={'/images/home/messenger-right.png'}
+            src={'/images/home/dummyImage.png'}
             className="w-100 shadow-1-strong rounded mb-4 shadowCustom"
             alt="Boat on Calm Water"
           />

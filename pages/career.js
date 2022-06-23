@@ -15,7 +15,23 @@ export default function Career() {
       dateOpened: "dd/mm/yyyy",
       jobDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
       remoteJob: "Yes"
-    }
+    },
+    {
+      title: "Senior Data Engineer",
+      jobType: "Full time",
+      workExp: "2-3 Years",
+      dateOpened: "dd/mm/yyyy",
+      jobDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+      remoteJob: "Yes"
+    },
+    {
+      title: "Senior Data Engineer",
+      jobType: "Full time",
+      workExp: "2-3 Years",
+      dateOpened: "dd/mm/yyyy",
+      jobDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+      remoteJob: "Yes"
+    },
   ]
 
   let coreValues = [
@@ -123,7 +139,7 @@ export default function Career() {
 
       </Container>
 
-      <Row className={`${styles.bgLightGrey} my-4`} >
+      <Row className={`${styles.bgLightGrey} mt-4 pb-4`} >
         <Col md={12} className="d-flex justify-content-center align-items-center mt-4">
           <p className="fs-6 fw-bold">Stucked<FaQuestion className={`${styles.colorRed} `} /></p>
         </Col>
