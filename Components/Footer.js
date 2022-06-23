@@ -6,25 +6,25 @@ export default function Footer() {
     <div className="footer-basic">
       <footer>
         <div className="social">
-          <a href="#">
+          <a href={process.env.NEXT_INSTAGRAM} target="_blank" rel="noreferrer">
             <Image src={'../images/home/instagram-footer.png'}
               className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
               alt="insta-icon"
             />
           </a>
-          <a href="#">
+          <a href={process.env.NEXT_FACEBOOK} target="_blank" rel="noreferrer">
             <Image src={'../images/home/facebook-footer.png'}
               className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
               alt="fb-icon"
             />
           </a>
-          <a href="#">
+          <a href={process.env.NEXT_TWITTER} target="_blank" rel="noreferrer">
             <Image src={'../images/home/twitter-footer.png'}
               className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
               alt="twitter-icon"
             />
           </a>
-          <a href="#">
+          <a href={process.env.NEXT_LINKEDIN} target="_blank" rel="noreferrer">
             <Image src={'../images/home/linkedin-footer.png'}
               className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
               alt="linkedIn-icon"
