@@ -21,11 +21,15 @@ export default function Career() {
   let coreValues = [
     {
       imgSrc: "/images/career/clientSatis.png",
-      desc: "Exceed Clients’ And Colleagues’ Expectations"
+      desc: "Exceed Clients’ Expectations"
     },
     {
       imgSrc: "/images/career/man-robot.svg",
-      desc: "Act In A Way That Makes All Of Us Proud"
+      desc: "Certified Team"
+    },
+    {
+      imgSrc: "/images/career/portfolio.svg",
+      desc: "Diverse Portfolio"
     }
   ]
   return (
@@ -64,9 +68,11 @@ export default function Career() {
               </p>
             </Col>
 
-            {coreValues.map((e, i) => {
-              return <CoreValuesPanel key={i} imgSrc={e.imgSrc} desc={e.desc} />
-            })}
+            <Row className="d-flex justify-content-evenly align-items-center">
+              {coreValues.map((e, i) => {
+                return <CoreValuesPanel key={i} imgSrc={e.imgSrc} desc={e.desc} />
+              })}
+            </Row>
 
           </Row>
 
