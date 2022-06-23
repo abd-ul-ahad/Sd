@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import Link from "next/link"
+import Link from "next/link";
+import Image from "react-bootstrap/Image";
 
 export default function Navbar() {
   const openCloseMenu = () => {
@@ -17,7 +18,7 @@ export default function Navbar() {
         <ul id="nav-list">
           <li>
             <Link href='/'><a>
-              <img id="logo" className="navbar-brand" src={'/images/home/logo.png'} alt="SayabiDevs Logo" />
+              <Image id="logo" className="navbar-brand" src={'/images/home/logo.png'} alt="SayabiDevs Logo" />
             </a></Link>
           </li>
           <li>
