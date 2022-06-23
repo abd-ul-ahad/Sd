@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "react-bootstrap/Image";
 
 export default function Footer() {
   return (
@@ -6,25 +7,25 @@ export default function Footer() {
       <footer>
         <div className="social">
           <a href="#">
-            <img src={'../images/home/instagram-footer.png'}
+            <Image src={'../images/home/instagram-footer.png'}
               className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
               alt="insta-icon"
             />
           </a>
           <a href="#">
-            <img src={'../images/home/facebook-footer.png'}
+            <Image src={'../images/home/facebook-footer.png'}
               className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
               alt="fb-icon"
             />
           </a>
           <a href="#">
-            <img src={'../images/home/twitter-footer.png'}
+            <Image src={'../images/home/twitter-footer.png'}
               className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
               alt="twitter-icon"
             />
           </a>
           <a href="#">
-            <img src={'../images/home/linkedin-footer.png'}
+            <Image src={'../images/home/linkedin-footer.png'}
               className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
               alt="linkedIn-icon"
             />

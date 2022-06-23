@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { CgSmartphoneChip } from "react-icons/cg";
 import { FaQuestion } from "react-icons/fa";
 import Head from "next/head";
+import { Image } from 'react-bootstrap';
 
 
 export default function Career() {
@@ -69,7 +70,7 @@ export default function Career() {
                 <Col key={i} md={7} className={`${styles.coreWrap} ${styles.bgLightGrey} d-flex justify-content-center align-items-center my-3`}>
                   <Row className="d-flex justify-content-center align-items-center">
                     <Col md={2} className="d-flex justify-content-center align-items-center">
-                      <img src={e.imgSrc} height={64} width={64} alt="client Expectations" />
+                      <Image src={e.imgSrc} height={64} width={64} alt="client Expectations" />
                     </Col>
                     <Col md={10} className="d-flex justify-content-center align-items-center">
                       <p className="fw-bold">{e.desc}</p>
