@@ -32,12 +32,12 @@ export default function Navbar() {
             </a></Link>
           </li>
           <li>
-            <Link href='/career'><a>
+            <Link href='/career'><a className='mb-4'>
               <Button variant="contained">Career</Button>
             </a></Link>
           </li>
           <li>
-            <a href="#" className="menu-icon" onClick={openCloseMenu}>
+            <a className="menu-icon" onClick={openCloseMenu}>
               <MenuRoundedIcon style={{ color: "#E71B1E" }} />
             </a>
           </li>

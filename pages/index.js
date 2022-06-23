@@ -3,7 +3,7 @@ import { Image } from 'react-bootstrap';
 
 export default function Home() {
   return (
-    <div >
+    <div>
       <Head>
         <title>SayabiDevs</title>
         <link rel="icon" href="/images/favicon.ico" />
@@ -25,7 +25,7 @@ export default function Home() {
           <p className='quote-description'>
             <span className='first-letter'>S</span>ayabiDevs is a startup birthed by passionate and experienced domain experts and motivated individuals who love working together as a team, and is here to provide effective and on-time solutions to your IT problems.
           </p>
-          <p className='text-center fw-bold' style={{ width: "150%" }}>Bilal Ahmer (Founder)</p>
+          <p className='mb-5'  style={{textAlign:"center",width:"150%",fontWeight:"bold"}}>Bilal Ahmer (Founder)</p>
         </div>
       </section>
 

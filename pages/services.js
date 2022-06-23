@@ -14,12 +14,15 @@ export default function Service() {
             </Head>
             {/* <Script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></Script>
             <Script src="/script/bs-init.js"></Script> */}
+            <div style={{ "backgroundColor": "rgb(255, 0, 24)" }}>
 
-            <div className="container">
-                <div className="row">
-                    <div className="col" style={{ "color": "var(--bs-white)",  "background": "#ff0018" }}>
-                        <h1 className="text-center text-primary"><strong><span style={{ "color": "rgb(255, 255, 255)" }}>Our Services</span></strong></h1>
-                        <p className="fw-light text-center" style={{ "padding": "0px", "paddingLeft": "48px", "paddingRight": "74px" }}>Retaining customer base is important for any enterprise, it takes great effort to make good customer relationship and minute error can ruin it. Owing to our outstanding customer service we have maintained the 85 % customer retention rate. We, the best IT service provider company in Noida help your business in getting loyalty back by transforming into latest advanced IT technology. Our BA, Designing, Developing, Support and Consultant team are always at your service to assist you in consultant, implementation, integration and support. We are the trustful answer for enterprises that are inclining towards digital era. Digitizing your work help in overall 25 % reduction in the core capital of the company and hence better ROI.<br /></p>
+
+                <div className="container">
+                    <div className="row">
+                        <div className="col" style={{ "color": "var(--bs-white)", "background": "#ff0018" }}>
+                            <h1 className="text-center text-primary"><strong><span style={{ "color": "rgb(255, 255, 255)" }}>Our Services</span></strong></h1>
+                            <p className="fw-light text-center" style={{ "padding": "0px", "paddingLeft": "48px", "paddingRight": "74px" }}>Retaining customer base is important for any enterprise, it takes great effort to make good customer relationship and minute error can ruin it. Owing to our outstanding customer service we have maintained the 85 % customer retention rate. We, the best IT service provider company in Noida help your business in getting loyalty back by transforming into latest advanced IT technology. Our BA, Designing, Developing, Support and Consultant team are always at your service to assist you in consultant, implementation, integration and support. We are the trustful answer for enterprises that are inclining towards digital era. Digitizing your work help in overall 25 % reduction in the core capital of the company and hence better ROI.<br /></p>
+                        </div>
                     </div>
                 </div>
             </div>

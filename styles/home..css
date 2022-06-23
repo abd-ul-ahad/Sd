@@ -53,8 +53,9 @@
     box-shadow:4px 2px 22px 0px #dcd5d5;
   }
   
-  caption{
-    text-shadow:2px 1px 10px #a1a1a1;
+
+  .shadowP{
+    text-shadow:2px 1px 10px #a1a1a1 !important;
   }
   
   /* Footer */

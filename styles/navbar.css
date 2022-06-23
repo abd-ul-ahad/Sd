@@ -51,6 +51,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    #nav-list {
+        min-height: 101px;
+    }
     .nav-div ul li a Button {
         display: none;
     }
@@ -69,6 +72,7 @@
         text-transform: capitalize;
         font-weight: bold;
         display: block;
+        width: 200px;
     }
 
     .nav-div.responsive ul li a img {
@@ -76,15 +80,21 @@
     }
 
     .nav-div.responsive .menu-icon {
-        position: relative;
-        right: 8%;
-        top: 5%;
+        position: absolute;
+        right: 0;
+        top: 16px;
     }
 
     .nav-div.responsive ul li {
         float: none;
         display: block;
         text-align: left;
+    }
+    .nav-div.responsive ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -100,7 +110,7 @@
     text-decoration: none;
     float: left;
     text-align: center;
-    padding: 14px 16px;
+    padding: 7px 16px;
     font-size: 17px;
 }
 
@@ -116,9 +126,11 @@
 .nav-div {
     overflow: hidden;
     position: sticky;
+    z-index: 1000;
     top: 0;
 }
 
 .nav-div .menu-icon {
     display: none;
+    cursor: pointer;
 }
