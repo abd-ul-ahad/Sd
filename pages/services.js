@@ -34,10 +34,7 @@ export default function Service() {
             <Head>
                 <title>Services | SayabiDevs</title>
                 <link rel="icon" href="/images/favicon.ico" />
-                {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" /> */}
             </Head>
-            {/* <Script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></Script>
-            <Script src="/script/bs-init.js"></Script> */}
             <div style={{ "backgroundColor": "#ff0018" }}>
                 <div className="container">
                     <div className="row">

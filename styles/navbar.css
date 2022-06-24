@@ -2,6 +2,8 @@
     width: 20%;
     height: 80%;
     float: left;
+    position: relative;
+    top: -10px;
     /* animation: rotate-move 8s infinite;
     animation-direction: alternate; */
 }
