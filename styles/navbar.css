@@ -4,8 +4,6 @@
     float: left;
     position: relative;
     top: -10px;
-    /* animation: rotate-move 8s infinite;
-    animation-direction: alternate; */
 }
 
 @media screen and (max-width: 600px) {
@@ -95,13 +93,3 @@
     display: none;
     cursor: pointer;
 }
-
-/* @keyframes rotate-move {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(180deg);
-    }
-} */

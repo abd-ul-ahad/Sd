@@ -21,10 +21,16 @@ export default function Service() {
             desc: "Web app development is the work involved in developing a Web site for the Internet or an intranet. Web development can range from developing a simple single static page of plain text to complex Web-based Internet applications, electronic businesses, and social network services. responsive web applications are essentials for every business."
         },
         {
-            imageSrc: "/images/services/download.png",
-            imageAlt: "Cyber security",
-            title: 'Cyber Security & Crime',
-            desc: "Cyber security is the application of technologies, processes and controls to protect systems, networks, programs, devices and data from cyber attacks. Cyber crime on the other hand deals with investigating criminal aspect in the cyber space to reduce criminal activities. We provide forensics and auditing services to help detect and prevent attacks."
+            imageSrc: "/images/services/dsci.png",
+            imageAlt: "Content Writing Data Science",
+            title: 'Content Writing Data Science',
+            desc: "Getting a credible data science writing online can be difficult if you don’t know how to research it. If you are looking for competent personnel, you are in right place.Our writers have vast experience in data collection; hence they can gather both primary and secondary data with ease.We offer top-quality services; therefore, we compose are within your instructions"
+        },
+        {
+            imageSrc: "/images/services/ai.png",
+            imageAlt: "AI and Machine learning",
+            title: 'AI and Machine learning',
+            desc: "We provide AI software development services create custom artificial intelligence solutions that provide insights and automate processes for your business."
         },
 
     ]
