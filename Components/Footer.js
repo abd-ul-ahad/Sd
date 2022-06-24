@@ -2,34 +2,39 @@ import Link from "next/link";
 import Image from "react-bootstrap/Image";
 
 export default function Footer() {
+  let SocialMediaData = [
+    {
+      link: process.env.NEXT_INSTAGRAM,
+      imageSrc: "/images/home/instagram-footer.png",
+      imageAlt: "instagram"
+    },
+    {
+      link: process.env.NEXT_FACEBOOK,
+      imageSrc: "/images/home/facebook-footer.png",
+      imageAlt: "instagram"
+    },
+    {
+      link: process.env.NEXT_TWITTER,
+      imageSrc: "/images/home/twitter-footer.png",
+      imageAlt: "instagram"
+    },
+    {
+      link: process.env.NEXT_LINKEDIN,
+      imageSrc: "/images/home/linkedin-footer.png",
+      imageAlt: "instagram"
+    },
+  ]
   return (
     <div className="footer-basic">
       <footer>
         <div className="social">
-          <a href={process.env.NEXT_INSTAGRAM} target="_blank" rel="noreferrer">
-            <Image src={'../images/home/instagram-footer.png'}
-              className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
-              alt="insta-icon"
-            />
-          </a>
-          <a href={process.env.NEXT_FACEBOOK} target="_blank" rel="noreferrer">
-            <Image src={'../images/home/facebook-footer.png'}
-              className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
-              alt="fb-icon"
-            />
-          </a>
-          <a href={process.env.NEXT_TWITTER} target="_blank" rel="noreferrer">
-            <Image src={'../images/home/twitter-footer.png'}
-              className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
-              alt="twitter-icon"
-            />
-          </a>
-          <a href={process.env.NEXT_LINKEDIN} target="_blank" rel="noreferrer">
-            <Image src={'../images/home/linkedin-footer.png'}
-              className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
-              alt="linkedIn-icon"
-            />
-          </a>
+         
+          {SocialMediaData.map((e, i) => {
+            return (
+              <MediaIcons key={i} link={e.link} imageSrc={e.imageSrc} imageAlt={e.imageAlt} />
+            )
+          })}
+        
         </div>
         <ul className="list-inline">
 
@@ -47,5 +52,16 @@ export default function Footer() {
         <p className="copyright">SayabiDevs © 2022</p>
       </footer>
     </div>
+  )
+}
+
+const MediaIcons = ({ link, imageSrc, imageAlt }) => {
+  return (
+    <a href={link} target="_blank" rel="noreferrer">
+      <Image src={imageSrc}
+        className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
+        alt={imageAlt}
+      />
+    </a>
   )
 }

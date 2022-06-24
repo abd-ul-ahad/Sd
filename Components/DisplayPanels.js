@@ -5,14 +5,14 @@ import styles from "../styles/Career.module.css";
 
 export function ServicesPanel({ imageSrc, imageAlt, title, desc }) {
     return (
-        <div className="col">
+        <Col>
             <div className="card">
                 <div className="card-body text-center p-4" ><Image src={imageSrc} alt={imageAlt} width="50" />
                     <h4 className="card-title"><span style={{ "color": "rgb(25, 25, 25)" }}>{title}</span><br /></h4>
                     <p className="card-text"><span style={{ "color": "rgb(89, 89, 89)" }}>{desc}</span><br /></p>
                 </div>
             </div>
-        </div>
+        </Col>
     )
 }
 
@@ -52,5 +52,31 @@ export function CoreValuesPanel({ imgSrc, desc }) {
                 </div>
             </div>
         </Col>
+    )
+}
+
+export function FoundersPanel({ image }) {
+    return (
+        <Col md={12} lg={3} className="mb-4 mb-lg-0">
+            <Image
+                src={image}
+                className="w-100 shadow-1-strong rounded mb-4 shadowCustom rounded-circle"
+                alt="Boat on Calm Water"
+                style={{ border: "3px solid #E71B1E" }}
+            />
+        </Col>
+    )
+}
+
+export function HomeHeaderPanel() {
+    return (
+        <section className="below-nav">
+            <h3>SOFTWARE THAT DEFINES YOUR WORK!</h3>
+            <p>
+                Our vision is to support learning incentives
+                and help customers and businesses alike flourish
+                by providing a convenient means to satisfy project demands.
+            </p>
+        </section>
     )
 }
