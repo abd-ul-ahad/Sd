@@ -28,13 +28,13 @@ export default function Footer() {
     <div className="footer-basic">
       <footer>
         <div className="social">
-         
+
           {SocialMediaData.map((e, i) => {
             return (
               <MediaIcons key={i} link={e.link} imageSrc={e.imageSrc} imageAlt={e.imageAlt} />
             )
           })}
-        
+
         </div>
         <ul className="list-inline">
 
@@ -55,9 +55,9 @@ export default function Footer() {
   )
 }
 
-const MediaIcons = ({ link, imageSrc, imageAlt }) => {
+const MediaIcons = ({ mediaLink, imageSrc, imageAlt }) => {
   return (
-    <a href={link} target="_blank" rel="noreferrer">
+    <a href={mediaLink} target="_blank" rel="noreferrer">
       <Image src={imageSrc}
         className="w-100 shadow-1-strong rounded mb-4 rounded-circle"
         alt={imageAlt}
