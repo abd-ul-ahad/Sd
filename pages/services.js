@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
-import { Image } from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
 import { ServicesPanel } from "../Components/DisplayPanels";
 
 

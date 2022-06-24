@@ -39,3 +39,26 @@ h1,
 ul {
   margin-bottom: 0 !important;
 }
+
+.typingWrap {
+  display: inline-block;
+}
+
+.typed-out {
+  overflow: hidden;
+  white-space: nowrap;
+  animation:
+    typing 1.5s steps(20, end) forwards;
+  font-size: 1.6rem;
+  width: 0;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}

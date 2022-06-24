@@ -58,8 +58,8 @@ export default function Career() {
       {/* Page Starts */}
       <div className={`${styles.careerHeader} mb-4`} >
         <Container className="h-100 d-flex justify-content-start align-items-center">
-          <div >
-            <h1 className={styles.textLarge} >Looking For career?</h1>
+          <div className="typingWrap" >
+            <h1 className={`${styles.textLarge} typed-out`} >Find Opportunities.</h1>
           </div>
         </Container>
       </div>
