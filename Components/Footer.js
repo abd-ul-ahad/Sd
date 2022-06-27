@@ -4,22 +4,22 @@ import Image from "react-bootstrap/Image";
 export default function Footer() {
   let SocialMediaData = [
     {
-      link: process.env.NEXT_INSTAGRAM,
+      mediaLink: process.env.NEXT_INSTAGRAM,
       imageSrc: "/images/home/instagram-footer.png",
       imageAlt: "instagram"
     },
     {
-      link: process.env.NEXT_FACEBOOK,
+      mediaLink: process.env.NEXT_FACEBOOK,
       imageSrc: "/images/home/facebook-footer.png",
       imageAlt: "instagram"
     },
     {
-      link: process.env.NEXT_TWITTER,
+      mediaLink: process.env.NEXT_TWITTER,
       imageSrc: "/images/home/twitter-footer.png",
       imageAlt: "instagram"
     },
     {
-      link: process.env.NEXT_LINKEDIN,
+      mediaLink: process.env.NEXT_LINKEDIN,
       imageSrc: "/images/home/linkedin-footer.png",
       imageAlt: "instagram"
     },
@@ -31,7 +31,7 @@ export default function Footer() {
 
           {SocialMediaData.map((e, i) => {
             return (
-              <MediaIcons key={i} link={e.link} imageSrc={e.imageSrc} imageAlt={e.imageAlt} />
+              <MediaIcons key={i} mediaLink={e.mediaLink} imageSrc={e.imageSrc} imageAlt={e.imageAlt} />
             )
           })}
 

@@ -153,11 +153,11 @@ export default function Career() {
           <Col md={7} className="d-flex justify-content-center align-items-center mb-3">
             <p className="text-center">We&#39;re always looking for people with unique skills. Send us your CV
               and we&#39;ll get in touch when we have an opening that matches your expectations.
-              Let&#39;s stay in touch
+              Let&#39;s stay in touch by subscribing to our newsletter.
             </p>
           </Col>
           <Col md={12} className="d-flex justify-content-center align-items-center" >
-            <button className={`${styles.applyBtn} mt-2 mb-4`}>Get in Touch</button>
+            <button className={`${styles.applyBtn} mt-2 mb-4`}>Get in Touch.</button>
           </Col>
         </Row>
 

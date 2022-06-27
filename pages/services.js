@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Script from "next/script";
-import { Container, Image } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import { ServicesPanel } from "../Components/DisplayPanels";
 
 
@@ -57,7 +56,7 @@ export default function Service() {
                 </div>
             </div>
             <div className="container py-4 py-xl-5">
-                <div className="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+                <div className="row gy-4 d-flex justify-content-center align-items-center row-cols-1 row-cols-md-2 row-cols-xl-3">
 
                     {ourServices.map((e, i) => {
                         return <ServicesPanel key={i} imageSrc={e.imageSrc} imageAlt={e.imageAlt} title={e.title} desc={e.desc} />

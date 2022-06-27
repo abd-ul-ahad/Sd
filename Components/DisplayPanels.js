@@ -42,12 +42,12 @@ export function VacancyPanel({ title, jobType, workExp, dateOpened, jobDesc, rem
 
 export function CoreValuesPanel({ imgSrc, desc }) {
     return (
-        <Col md={3} className={`${styles.coreWrap} ${styles.vacancyWrap} d-flex justify-content-center align-items-center my-3`}>
+        <Col md={3} className={`${styles.coreWrap} ${styles.vacancyWrap} d-flex justify-content-center align-items-center py-4 my-3`}>
             <div className="d-flex justify-content-center align-items-center flex-column py-3 px-3">
                 <div md={2} className="d-flex justify-content-center align-items-center">
                     <Image src={imgSrc} height={64} width={64} alt="client Expectations" />
                 </div>
-                <div md={10} className="d-flex justify-content-center align-items-center">
+                <div md={10} className="py-3 d-flex justify-content-center align-items-center">
                     <p className="fw-bold text-center my-2">{desc}</p>
                 </div>
             </div>
