@@ -11,9 +11,9 @@ export default function Contact() {
                 <link rel="icon" href="/images/favicon.ico" />
             </Head>
             <div style={{ "backgroundColor": "#E71B1E" }} >
-                <Container className="py-5 mb-3">
+                <Container className="py-5 mb-5">
 
-                    <h2 className="text-white fw-bold text-center my-3">
+                    <h2 className="text-white fw-bold text-center my-5 py-5">
                         Describe your work and<br />Fill this contact form.
                     </h2>
 
