@@ -32,8 +32,13 @@ export default function Navbar() {
             </a></Link>
           </li>
           <li>
-            <Link href='/career'><a className='mb-4'>
+            <Link href='/career'><a>
               <Button variant="contained">Career</Button>
+            </a></Link>
+          </li>
+          <li>
+            <Link href='/contact'><a className='mb-4'>
+              <Button variant="contained">Contact</Button>
             </a></Link>
           </li>
           <li>
