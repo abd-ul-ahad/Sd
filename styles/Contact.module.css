@@ -41,3 +41,13 @@
 .colorRed {
     color: var(--logo-red);
 }
+
+.headerBackImage {
+    background-image: url("../public/images/contact/contactus.jpg");
+    background-repeat: repeat;
+    background-position: top;
+    background-size: cover;
+    height: 500px;
+    mix-blend-mode: darken;
+    filter: drop-shadow(0 0 0 black);
+}
