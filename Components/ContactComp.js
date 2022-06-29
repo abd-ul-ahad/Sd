@@ -1,7 +1,7 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import styles from "../styles/Contact.module.css";
 
-export function ContactForm () {
+export function ContactForm() {
     return (
         <form className={`${styles.contactFormYAxis} bg-white px-5 py-3`} >
             <Row className="d-flex justify-content-between align-items-center">
@@ -64,4 +64,3 @@ export function ContactAddress() {
         </div>
     )
 }
- 

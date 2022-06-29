@@ -1,9 +1,9 @@
-.contactFormYAxis{
+.contactFormYAxis {
     position: relative;
     top: -115px;
 }
 
-.contactAddressWrap{
+.contactAddressWrap {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
@@ -19,21 +19,25 @@
     border-radius: 0.31rem;
 }
 
-.emailStyles{
+.emailStyles {
     color: black;
     text-decoration: none;
 }
 
-.emailStyles:hover{
-    color:  var(--logo-red);
+.emailStyles:hover {
+    color: var(--logo-red);
 }
 
-.inputStyles{
-    border:none;
+.inputStyles {
+    border: none;
     border-bottom: 1px solid var(--logo-red);
 }
 
-.inputStyles:focus{
-    border:none;
+.inputStyles:focus {
+    border: none;
     outline: 1px solid var(--logo-red);
+}
+
+.colorRed {
+    color: var(--logo-red);
 }
