@@ -93,3 +93,12 @@
     display: none;
     cursor: pointer;
 }
+
+.materialUiButton{
+    color: var(--smoke-white);
+    text-decoration: none;
+    background-color: var(--logo-red) !important;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 2px 1px 10px #5c5b5b;
+}

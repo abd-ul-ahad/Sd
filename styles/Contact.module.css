@@ -29,13 +29,14 @@
 }
 
 .inputStyles {
-    border: none;
+    border: 1px solid white;
     border-bottom: 1px solid var(--logo-red);
+    width: 15rem;
 }
 
 .inputStyles:focus {
-    border: none;
-    outline: 1px solid var(--logo-red);
+    border: 1px solid var(--logo-red);
+    outline: none;
 }
 
 .colorRed {

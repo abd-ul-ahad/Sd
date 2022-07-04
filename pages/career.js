@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { CgSmartphoneChip } from "react-icons/cg";
 import { FaQuestion } from "react-icons/fa";
 import Head from "next/head";
+import Button from "@mui/material/Button";
 import { VacancyPanel, CoreValuesPanel } from "../Components/DisplayPanels";
 
 
@@ -157,9 +158,9 @@ export default function Career() {
             </p>
           </Col>
           <Col md={12} className="d-flex justify-content-center align-items-center" >
-            <button className={`${styles.applyBtn} mt-2 mb-4`}>Get in Touch.</button>
+            <Button className={`${styles.applyBtn} materialUiButton mt-2 mb-4`}>Get in Touch.</Button>
           </Col>
-        </Row>
+        </Row> 
 
       </Row>
     </div>

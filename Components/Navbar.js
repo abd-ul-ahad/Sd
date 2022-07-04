@@ -1,10 +1,11 @@
-import Button from '@mui/material/Button';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import Button from "@mui/material/Button";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import Link from "next/link";
 import Image from "react-bootstrap/Image";
 
-export default function Navbar() {
 
+
+export default function Navbar() {
   const openCloseMenu = () => {
     var x = document.getElementById("_nav-div");
     if (x.className === "nav-div") {
@@ -12,42 +13,65 @@ export default function Navbar() {
     } else {
       x.className = "nav-div";
     }
-  }
-  
+  };
+
   return (
     <>
       <div className="nav-div" id="_nav-div">
         <ul id="nav-list">
           <li>
-            <Link href='/'><a>
-              <Image id="logo" className="navbar-brand" src={'/images/home/logo.png'} alt="SayabiDevs Logo" />
-            </a></Link>
-          </li>
-          
-          <li>
-            <Link href='/'><a>
-              <Button variant="contained">Home</Button>
-            </a></Link>
-          </li>
-          
-          <li>
-            <Link href='/services'><a>
-              <Button variant="contained">Services</Button>
-            </a></Link>
-          </li>
-          
-          <li>
-            <Link href='/career'><a>
-              <Button variant="contained">Career</Button>
-            </a></Link>
+            <Link href="/">
+              <a>
+                <Image
+                  id="logo"
+                  className="navbar-brand"
+                  src={"/images/home/logo.png"}
+                  alt="SayabiDevs Logo"
+                />
+              </a>
+            </Link>
           </li>
 
           <li>
-            <Link href='/contact'><a className='mb-4'>
-              <Button variant="contained">Contact</Button>
-            </a></Link>
+            <Link href="/">
+              <a>
+                <Button variant="contained">Home</Button>
+              </a>
+            </Link>
           </li>
-          
+
+          <li>
+            <Link href="/services">
+              <a>
+                <Button variant="contained">Services</Button>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/career">
+              <a>
+                <Button variant="contained">Career</Button>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/contact">
+              <a className="mb-4">
+                <Button variant="contained">Contact</Button>
+              </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link href="/signup">
+              <a className="mb-4">
+                <Button variant="contained">Sign Up</Button>
+              </a>
+            </Link>
+          </li>
+
           <li>
             <a className="menu-icon" onClick={openCloseMenu}>
               <MenuRoundedIcon style={{ color: "#E71B1E" }} />
@@ -56,5 +80,5 @@ export default function Navbar() {
         </ul>
       </div>
     </>
-  )
+  );
 }

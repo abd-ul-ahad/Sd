@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import { Image } from 'react-bootstrap';
 import { Col, Row } from "react-bootstrap";
 import styles from "../styles/Career.module.css";
@@ -32,7 +33,8 @@ export function VacancyPanel({ title, jobType, workExp, dateOpened, jobDesc, rem
                         <p className="my-2"><span className="fw-bold">Remote Job</span>: {remoteJob}</p>
                     </Col>
                     <Col md={3} className="d-flex justify-content-md-center justify-content-sm-start align-items-center" >
-                        <button className={`${styles.applyBtn} my-4`}>Apply</button>
+                        <Button variant="contained" className={`${styles.applyBtn} materialUiButton my-4`}>Apply</Button>
+                        
                     </Col>
                 </Row>
             </div>
