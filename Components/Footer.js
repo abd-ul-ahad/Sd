@@ -37,7 +37,6 @@ export default function Footer() {
 
         </div>
         <ul className="list-inline">
-
           <li className="list-inline-item">
             <Link href='/'><a>Home</a></Link>
           </li>
@@ -45,6 +44,7 @@ export default function Footer() {
           <li className="list-inline-item">
             <Link href='/services'><a>Services</a></Link>
           </li>
+          
           <li className="list-inline-item">
             <Link href='/career'><a>Career</a></Link>
           </li>

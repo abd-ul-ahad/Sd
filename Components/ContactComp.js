@@ -21,10 +21,8 @@ export function ContactForm() {
             </Row>
 
             <div className="d-flex justify-content-between align-items-center">
-
                 <textarea style={{ "resize": "none" }} className={`w-100 my-3 py-2 px-3 ${styles.inputStyles}`} rows={8} cols={88} placeholder="Message" ></textarea>
             </div>
-
 
             <div>
                 <button onClick={e => { e.preventDefault() }} className={`${styles.messageBtn} my-4`}>Send</button>
@@ -48,9 +46,8 @@ export function ContactAddress() {
                     <p className="fw-bold">Contact Number: </p>
                     <p className={styles.marginLeft}>+92 00000000000</p>
                 </div>
-
+                
                 <div className="my-3">
-
                     <p className="fw-bold">Email: </p>
                     <p className={styles.marginLeft}><a className={styles.emailStyles} href={`mailto: ${process.env.NEXT_CONTACTEMAIL}`}>email@someone.com</a></p>
                 </div>
