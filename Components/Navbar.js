@@ -65,9 +65,9 @@ export default function Navbar() {
           </li>
 
           <li>
-            <Link href="/signup">
+            <Link href="/login">
               <a className="mb-4">
-                <Button variant="contained">Sign Up</Button>
+                <Button variant="contained">Login</Button>
               </a>
             </Link>
           </li>
