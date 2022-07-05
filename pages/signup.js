@@ -140,7 +140,6 @@ export default function Signup() {
                     fullNameValidator();
                   }}
                 />
-                <div className="valid-feedback mx-3">Looks good!</div>
                 <div className="invalid-feedback mx-3">
                   Your Name must starts with Alphabets
                 </div>
@@ -159,7 +158,6 @@ export default function Signup() {
                     setEmail(e.target.value);
                   }}
                 />
-                <div className="valid-feedback mx-3">Looks good!</div>
                 <div className="invalid-feedback mx-3">
                   Enter a valid Email Address
                 </div>
