@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 import styles from "../styles/LoginSignUp.module.css";
 import Link from "next/link";
 import Head from "next/head";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function Login() {
   const [email, setEmail] = useState("");
