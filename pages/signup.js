@@ -105,7 +105,7 @@ export default function Signup() {
   return (
     <>
       <Head>
-        <title>Login | SayabiDevs</title>
+        <title>Sign Up | SayabiDevs</title>
         <link rel="icon" href="/images/favicon.ico" />
         {/* <script ></script> */}
       </Head>

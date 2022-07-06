@@ -11,7 +11,7 @@ export default function Login() {
 
   const emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-  const handleLogin = () => {
+  const EmailValidator = () => {
     var x = document.getElementById("email_");
 
     if (emailReg.test(email)) {
@@ -49,11 +49,11 @@ export default function Login() {
                 className={`${styles.inputStyles} px-2 my-2 mx-2 w-100 py-2 form-control`}
                 placeholder="Email"
                 id="email_"
+                onBlur={() => {EmailValidator()}}
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
-              <div className="valid-feedback mx-3">Looks good!</div>
               <div className="invalid-feedback mx-3">
                 Enter a valid Email Address
               </div>
