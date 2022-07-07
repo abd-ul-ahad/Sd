@@ -16,6 +16,9 @@
   --text-grey: #8b8a8a;
   --dark-grey: #545454;
   --almost-black: #292929;
+  --green: #5dc560;
+  --orange-shade: #eaae53;
+  --red-shade: #ea5395;
 }
 
 *,
@@ -103,6 +106,11 @@ ul {
   width: 100%;
 }
 
-.activeSidebar{
+.activeSidebar {
   left: 0 !important;
+}
+
+.smokeWhite {
+  background-color: var(--light-grey);
+  height: 100vh;
 }

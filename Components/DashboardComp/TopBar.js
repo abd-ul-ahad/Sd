@@ -13,7 +13,7 @@ export default function TopBar() {
   const { setSidebarIsOpened } = useStateContext();
 
   return (
-    <div className="d-flex justify-content-between align-items-center py-2 px-4" style={{" zIndex": "99999"}}>
+    <div className="d-flex justify-content-between align-items-center py-2 px-4" style={{" zIndex": "99999"}} >
       <div>
         <button className={`my-2 px-2 mx-2 h5  ${styles.buttonEffects}`} onClick={() => {setSidebarIsOpened(true)}}>
           <FiMenu />
