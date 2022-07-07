@@ -6,6 +6,7 @@ import styles from "../../styles/Dashboard.module.css";
 import { GrClose } from "react-icons/gr";
 import Link from "next/link";
 import { useStateContext } from "../../contexts/contextProvider";
+import { Image } from "react-bootstrap";
 
 export default function SideBar() {
   const { sidebarIsOpened, setSidebarIsOpened } = useStateContext();
@@ -20,7 +21,7 @@ export default function SideBar() {
         <div className="d-flex justify-content-between align-items-center py-2 px-2">
           <Link href="/">
             <a>
-              <img
+              <Image
                 src="/images/home/logo.png"
                 style={{ height: "70px" }}
                 alt="Logo"
@@ -72,16 +73,16 @@ export default function SideBar() {
 const SideBarButton = ({ text, reLink, icon }) => {
   return (
     <div className="px-2">
-      <button
-        className={`${styles.buttonEffects} ${styles.buttonHover} my-2 py-2 px-4 w-100 d-flex justify-content-start align-items-center flex-row`}
-      >
-        {icon}
-        <Link href={`${reLink}`}>
-          <a className={styles.buttonText}>
+      <Link href={`${reLink}`}>
+        <a className={styles.buttonText}>
+          <button
+            className={`${styles.buttonEffects} ${styles.buttonHover} my-2 py-2 px-4 w-100 d-flex justify-content-start align-items-center flex-row`}
+          >
+            {icon}
             <p className="h5 mx-3">{text}</p>
-          </a>
-        </Link>
-      </button>
+          </button>
+        </a>
+      </Link>
     </div>
   );
 };

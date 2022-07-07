@@ -48,6 +48,9 @@ export default function Footer() {
           <li className="list-inline-item">
             <Link href='/career'><a>Career</a></Link>
           </li>
+          <li className="list-inline-item">
+            <Link href='/contact'><a>Contact</a></Link>
+          </li>
         </ul>
         <p className="copyright">SayabiDevs © 2022</p>
       </footer>

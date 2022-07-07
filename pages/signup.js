@@ -5,6 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { useState } from "react";
 import Script from "next/script";
+import { Image } from "react-bootstrap";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -120,7 +121,7 @@ export default function Signup() {
           <Col lg={5}>
             <form className="d-flex justify-content-center align-items-center flex-column">
               <p className="h3 my-2 align-self-start">Welcome to</p>
-              <img
+              <Image
                 src="/images/home/logo.png"
                 height={100}
                 alt="SayabiDevs"

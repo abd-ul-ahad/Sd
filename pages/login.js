@@ -4,6 +4,7 @@ import styles from "../styles/LoginSignUp.module.css";
 import Link from "next/link";
 import Head from "next/head";
 import { useState } from "react";
+import { Image } from "react-bootstrap";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -37,7 +38,7 @@ export default function Login() {
           <Col lg={5}>
             <form className="d-flex justify-content-center align-items-center flex-column">
               <p className="h3 my-2 align-self-start">Login to</p>
-              <img
+              <Image
                 src="/images/home/logo.png"
                 height={100}
                 alt="SayabiDevs"
@@ -49,7 +50,9 @@ export default function Login() {
                 className={`${styles.inputStyles} px-2 my-2 mx-2 w-100 py-2 form-control`}
                 placeholder="Email"
                 id="email_"
-                onBlur={() => {EmailValidator()}}
+                onBlur={() => {
+                  EmailValidator();
+                }}
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
