@@ -62,16 +62,17 @@ ul {
   }
 }
 
-.paddLeftZero{
+.paddLeftZero {
   padding-left: 0px !important;
 }
 
-.strengthLabel{
+/* password strength styles */
+.strengthLabel {
   font-size: 12px;
   margin-left: 10px;
 }
 
-.strengthPercent{
+.strengthPercent {
   flex: 1;
   height: 5px;
   border-radius: 10px;
@@ -80,24 +81,24 @@ ul {
   background-color: white;
 }
 
-.strengthPercent span{
+.strengthPercent span {
   display: block;
   height: 100%;
   transition: all 0.4s;
   border-radius: 10px;
 }
 
-.weak{
+.weak {
   background-color: red;
   width: 33%;
 }
 
-.average{
+.average {
   background-color: #ffd000;
   width: 66%;
 }
 
-.strong{
+.strong {
   background-color: green;
   width: 100%;
 }
