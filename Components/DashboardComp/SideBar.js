@@ -55,12 +55,12 @@ export default function SideBar() {
             />
             <SideBarButton
               text={"Tickets Awaiting"}
-              reLink="/admin/pending-orders"
+              reLink="/admin/tickets"
               icon={<BsChatQuote />}
             />
             <SideBarButton
               text={"Cancellation"}
-              reLink="/admin/pending-orders"
+              reLink="/admin/cancellation"
               icon={<ImBlocked />}
             />
           </div>

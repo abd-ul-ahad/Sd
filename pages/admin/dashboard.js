@@ -19,7 +19,7 @@ export default function Dashboard() {
               <Row className="my-3">
                 <OrdersBoxes
                   text="Pending Orders"
-                  number={0}
+                  number={4}
                   bgColor={"--red-shade"}
                   link="/admin/pending-orders"
                   icon={<ImCart className="h3" />}
@@ -27,7 +27,7 @@ export default function Dashboard() {
 
                 <OrdersBoxes
                   text="Tickets Awaiting"
-                  number={0}
+                  number={5}
                   bgColor={"--green"}
                   link="/admin/tickets"
                   icon={<BsChatFill className="h3" />}
@@ -35,7 +35,7 @@ export default function Dashboard() {
 
                 <OrdersBoxes
                   text="Pending Cancellation"
-                  number={0}
+                  number={4}
                   bgColor={"--orange-shade"}
                   link="/admin/cancellation"
                   icon={<ImBlocked className="h3" />}

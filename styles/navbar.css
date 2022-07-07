@@ -102,3 +102,12 @@
     font-weight: bold;
     text-shadow: 2px 1px 10px #5c5b5b;
 }
+
+.materialUiGreenButton{
+    color: var(--smoke-white);
+    text-decoration: none;
+    background-color: var(--green) !important;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-shadow: 2px 1px 10px #5c5b5b;
+}

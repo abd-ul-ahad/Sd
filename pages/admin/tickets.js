@@ -20,7 +20,98 @@ export default function Tickets() {
                 <span className="fw-bold">Tickets Awaiting</span>
               </p>
             </div>
-            <div></div>
+            <div>
+              <table className="w-100 my-5">
+                <thead
+                  style={{ backgroundColor: "#1a4d80" }}
+                  className="text-white"
+                >
+                  <tr>
+                    <th
+                      style={{ borderRight: "2px solid white" }}
+                      className="text-center py-2 px-3"
+                    >
+                      Department
+                    </th>
+                    <th
+                      style={{ borderRight: "2px solid white" }}
+                      className="text-center py-2 px-3"
+                    >
+                      Subject
+                    </th>
+                    <th
+                      style={{ borderRight: "2px solid white" }}
+                      className="text-center py-2 px-3"
+                    >
+                      Requestor
+                    </th>
+                    <th
+                      style={{ borderRight: "2px solid white" }}
+                      className="text-center py-2 px-3"
+                    >
+                      Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ borderBottom: "1px solid var(--text-grey)" }}>
+                    <td className="py-2 px-3">Web Development</td>
+                    <td className="py-2 px-3">Web App</td>
+                    <td className="py-2 px-3">User</td>
+                    <td
+                      className="py-2 px-3 "
+                      style={{ color: "var(--green)" }}
+                    >
+                      Pending
+                    </td>
+                  </tr>
+                  <tr style={{ borderBottom: "1px solid var(--text-grey)" }}>
+                    <td className="py-2 px-3">Web Development</td>
+                    <td className="py-2 px-3">Web App</td>
+                    <td className="py-2 px-3">User</td>
+                    <td
+                      className="py-2 px-3 "
+                      style={{ color: "var(--green)" }}
+                    >
+                      Pending
+                    </td>
+                  </tr>
+                  <tr style={{ borderBottom: "1px solid var(--text-grey)" }}>
+                    <td className="py-2 px-3">Web Development</td>
+                    <td className="py-2 px-3">Web App</td>
+                    <td className="py-2 px-3">User</td>
+                    <td
+                      className="py-2 px-3 "
+                      style={{ color: "var(--green)" }}
+                    >
+                      Pending
+                    </td>
+                  </tr>
+                  <tr style={{ borderBottom: "1px solid var(--text-grey)" }}>
+                    <td className="py-2 px-3">Web Development</td>
+                    <td className="py-2 px-3">Web App</td>
+                    <td className="py-2 px-3">User</td>
+                    <td
+                      className="py-2 px-3 "
+                      style={{ color: "var(--green)" }}
+                    >
+                      Pending
+                    </td>
+                  </tr>
+                  <tr style={{ borderBottom: "1px solid var(--text-grey)" }}>
+                    <td className="py-2 px-3">Web Development</td>
+                    <td className="py-2 px-3">Web App</td>
+                    <td className="py-2 px-3">User</td>
+                    <td
+                      className="py-2 px-3 "
+                      style={{ color: "var(--green)" }}
+                    >
+                      Pending
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </Container>
         </div>
       </DashboardWrap>
