@@ -2,8 +2,7 @@ import Button from "@mui/material/Button";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import Link from "next/link";
 import Image from "react-bootstrap/Image";
-
-
+import { RiAccountCircleFill } from "react-icons/ri";
 
 export default function Navbar() {
   const openCloseMenu = () => {
@@ -69,6 +68,14 @@ export default function Navbar() {
               <a className="mb-4">
                 <Button variant="contained">Login</Button>
               </a>
+            </Link>
+          </li>
+
+          <li style={{position: "relative", top: "8px"}}>
+            <Link href="/dashboard">
+                <button className="buttonEffects h4">
+                  <RiAccountCircleFill />
+                </button>
             </Link>
           </li>
 

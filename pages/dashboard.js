@@ -1,9 +1,9 @@
 import Head from "next/head";
 import { Container, Row, Col } from "react-bootstrap";
-import { ImBlocked, ImCart } from "react-icons/im";
+import { ImCart } from "react-icons/im";
 import { BsChatFill } from "react-icons/bs";
 import Link from "next/link";
-import DashboardWrap from "../../Components/DashboardComp/DashboardWrap";
+import DashboardWrap from "../Components/DashboardComp/DashboardWrap";
 
 export default function Dashboard() {
   return (
@@ -13,12 +13,12 @@ export default function Dashboard() {
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <div>
-      <DashboardWrap admin={true}>
+        <DashboardWrap admin={false}>
           <div className="smokeWhite">
             <Container>
               <Row className="my-3">
                 <OrdersBoxes
-                  text="Pending Orders"
+                  text="Orders"
                   number={4}
                   bgColor={"--red-shade"}
                   link="/admin/pending-orders"
@@ -26,19 +26,11 @@ export default function Dashboard() {
                 />
 
                 <OrdersBoxes
-                  text="Tickets Awaiting"
+                  text="Tickets"
                   number={5}
                   bgColor={"--green"}
                   link="/admin/tickets"
                   icon={<BsChatFill className="h3" />}
-                />
-
-                <OrdersBoxes
-                  text="Pending Cancellation"
-                  number={4}
-                  bgColor={"--orange-shade"}
-                  link="/admin/cancellation"
-                  icon={<ImBlocked className="h3" />}
                 />
               </Row>
             </Container>

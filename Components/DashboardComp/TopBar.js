@@ -86,7 +86,7 @@ const NotifiPanel = ({ setNotifyPanel }) => {
   );
 };
 
-const UserProfilePanel = ({ setUserPanel }) => {
+export const UserProfilePanel = ({ setUserPanel }) => {
   return (
     <div className={`position-absolute ${styles.dropDownBox}`}>
       <div className="d-flex justify-content-between align-items-center w-100">

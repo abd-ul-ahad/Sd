@@ -3,12 +3,12 @@ import { AiOutlineHome } from "react-icons/ai";
 import { ImBlocked } from "react-icons/im";
 import { BsChatQuote } from "react-icons/bs";
 import styles from "../../styles/Dashboard.module.css";
-import { GrClose } from "react-icons/gr";
+import { GrClose, GrServices } from "react-icons/gr";
 import Link from "next/link";
 import { useStateContext } from "../../contexts/contextProvider";
 import { Image } from "react-bootstrap";
 
-export default function SideBar() {
+export default function SideBar({ admin }) {
   const { sidebarIsOpened, setSidebarIsOpened } = useStateContext();
 
   return (
@@ -40,29 +40,63 @@ export default function SideBar() {
 
         <div className="my-2">
           <div>
-            <p className="fw-lighter mx-3" style={{ opacity: "0.6" }}>
-              DASHBOARD
-            </p>
-            <SideBarButton
-              text={"Main"}
-              reLink="/admin/dashboard"
-              icon={<AiOutlineHome className="h5" />}
-            />
-            <SideBarButton
-              text={"Pending Orders"}
-              reLink="/admin/pending-orders"
-              icon={<FiShoppingCart />}
-            />
-            <SideBarButton
-              text={"Tickets Awaiting"}
-              reLink="/admin/tickets"
-              icon={<BsChatQuote />}
-            />
-            <SideBarButton
-              text={"Cancellation"}
-              reLink="/admin/cancellation"
-              icon={<ImBlocked />}
-            />
+            {admin && (
+              <>
+                <p className="fw-lighter mx-3" style={{ opacity: "0.6" }}>
+                  DASHBOARD
+                </p>
+                <SideBarButton
+                  text={"Dashboard"}
+                  reLink="/admin/dashboard"
+                  icon={<AiOutlineHome className="h5" />}
+                />
+                <SideBarButton
+                  text={"Pending Orders"}
+                  reLink="/admin/pending-orders"
+                  icon={<FiShoppingCart />}
+                />
+                <SideBarButton
+                  text={"Tickets Awaiting"}
+                  reLink="/admin/tickets"
+                  icon={<BsChatQuote />}
+                />
+                <SideBarButton
+                  text={"Cancellation"}
+                  reLink="/admin/cancellation"
+                  icon={<ImBlocked />}
+                />
+              </>
+            )}
+            {!admin && (
+              <>
+                <p className="fw-lighter mx-3" style={{ opacity: "0.6" }}>
+                  DASHBOARD
+                </p>
+                <SideBarButton
+                  text={"Dashboard"}
+                  reLink="/dashboard"
+                  icon={<AiOutlineHome className="h5" />}
+                />
+                <SideBarButton
+                  text={"Open new Order"}
+                  reLink="/pending-orders"
+                  icon={<FiShoppingCart />}
+                />
+                <SideBarButton
+                  text={"Open new Ticket"}
+                  reLink="/tickets"
+                  icon={<BsChatQuote />}
+                />
+                <p className="fw-lighter mx-3" style={{ opacity: "0.6" }}>
+                  SHORTCUT
+                </p>
+                <SideBarButton
+                  text={"Order a new Service"}
+                  reLink="/services"
+                  icon={<GrServices />}
+                />
+              </>
+            )}
           </div>
         </div>
       </div>

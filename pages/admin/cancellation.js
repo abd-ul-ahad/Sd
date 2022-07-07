@@ -11,7 +11,7 @@ export default function Cancellation() {
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
 
-      <DashboardWrap>
+      <DashboardWrap admin={true}>
         <div className="smokeWhite py-4">
           <Container>
             <div>

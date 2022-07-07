@@ -3,10 +3,10 @@ import TopBar from "./TopBar";
 
 
 
-export default function DashboardWrap ({children}) {
+export default function DashboardWrap ({children, admin}) {
     return (
         <>
-            <SideBar />
+            <SideBar admin={admin} />
             <TopBar />
             {children}
         </>

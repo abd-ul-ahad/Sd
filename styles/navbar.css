@@ -111,3 +111,8 @@
     font-weight: bold;
     text-shadow: 2px 1px 10px #5c5b5b;
 }
+
+.buttonEffects {
+    background: transparent;
+    border: none;
+}
