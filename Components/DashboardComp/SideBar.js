@@ -3,11 +3,16 @@ import { AiOutlineHome } from "react-icons/ai";
 import styles from "../../styles/Dashboard.module.css";
 import { GrClose } from "react-icons/gr";
 import Link from "next/link";
+import { useStateContext } from '../../contexts/contextProvider';
 
 export default function SideBar() {
+
+  const { sidebarIsOpened, setSidebarIsOpened } = useStateContext();
+  console.log(sidebarIsOpened);
+
   return (
     <div>
-      <div className={`position-fixed ${styles.sideBarWrap}`}>
+      <div className={`position-fixed ${styles.sideBarWrap} ${sidebarIsOpened && "activeSidebar"}`}>
         <div className="d-flex justify-content-between align-items-center py-2 px-2">
           <img
             src="/images/home/logo.png"
@@ -16,6 +21,7 @@ export default function SideBar() {
           />
           <button
             className={`my-2 px-2 mx-2 h5 fw-bold  ${styles.buttonEffects}`}
+            onClick={() => {setSidebarIsOpened(false)}}
           >
             <GrClose />
           </button>

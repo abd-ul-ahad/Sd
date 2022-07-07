@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "../Components/Footer";
@@ -6,6 +5,7 @@ import Navbar from "../Components/Navbar";
 import LoadingBar from "react-top-loading-bar";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { ContextProvider } from "../contexts/contextProvider";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -20,18 +20,21 @@ function MyApp({ Component, pageProps }) {
     router.events.on("routeChangeComplete", () => {
       setProgress(100);
     });
+    /* eslint-disable react-hooks/exhaustive-deps */
   }, []);
 
   return (
     <>
-      <LoadingBar
-        color="#E71B1E"
-        progress={progress}
-        onLoaderFinished={() => setProgress(0)}
-      />
-      {!adminPathChecker.includes("admin") && <Navbar />}
-      <Component {...pageProps} />
-      {!adminPathChecker.includes("admin") && <Footer />}
+      <ContextProvider>
+        <LoadingBar
+          color="#E71B1E"
+          progress={progress}
+          onLoaderFinished={() => setProgress(0)}
+        />
+        {!adminPathChecker.includes("admin") && <Navbar />}
+        <Component {...pageProps} />
+        {!adminPathChecker.includes("admin") && <Footer />}
+      </ContextProvider>
     </>
   );
 }
