@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { RiAdminFill } from "react-icons/ri";
-import DashboardWrap from "../../Components/DashboardComp/DashboardWrap";
+import DashboardWrap from "../Components/DashboardComp/DashboardWrap";
 import { Container } from "react-bootstrap";
+import { Button } from "@mui/material";
 
 export default function Tickets() {
   return (
@@ -11,13 +12,13 @@ export default function Tickets() {
         <link rel="icon" href="/images/favicon.ico" />
       </Head>
 
-      <DashboardWrap admin={true}>
+      <DashboardWrap admin={false}>
         <div className="smokeWhite py-4">
           <Container>
             <div>
               <p className="h4">
                 <RiAdminFill /> <span className="fw-bold">/</span>{" "}
-                <span className="fw-bold">Tickets Awaiting</span>
+                <span className="fw-bold">Tickets</span>
               </p>
             </div>
             <div>
@@ -74,6 +75,35 @@ export default function Tickets() {
                   </tr>
                 </tbody>
               </table>
+
+              <div className="my-2">
+                <p className="h4">
+                  <span className="fw-bold">Open Ticket</span>
+                </p>
+              </div>
+
+              <div className="d-flex justify-content-center align-items-center flex-column py-4 my-2">
+                <form className="w-100">
+                  <input
+                    type="text"
+                    className="w-100 mb-2 py-1 px-2"
+                    placeholder="Subject"
+                  />
+                  <textarea
+                    className="w-100 mb-2 py-1 px-2"
+                    placeholder="Message"
+                    id=""
+                    cols="30"
+                    rows="10"
+                  ></textarea>
+                  <Button
+                    variant="contained"
+                    className={`my-4`}
+                  >
+                    Open
+                  </Button>
+                </form>
+              </div>
             </div>
           </Container>
         </div>

@@ -78,8 +78,8 @@ export default function SideBar({ admin }) {
                   icon={<AiOutlineHome className="h5" />}
                 />
                 <SideBarButton
-                  text={"Open new Order"}
-                  reLink="/pending-orders"
+                  text={"Orders"}
+                  reLink="/orders"
                   icon={<FiShoppingCart />}
                 />
                 <SideBarButton

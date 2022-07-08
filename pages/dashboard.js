@@ -21,7 +21,7 @@ export default function Dashboard() {
                   text="Orders"
                   number={4}
                   bgColor={"--red-shade"}
-                  link="/admin/pending-orders"
+                  link="/orders"
                   icon={<ImCart className="h3" />}
                 />
 
@@ -29,7 +29,7 @@ export default function Dashboard() {
                   text="Tickets"
                   number={5}
                   bgColor={"--green"}
-                  link="/admin/tickets"
+                  link="/tickets"
                   icon={<BsChatFill className="h3" />}
                 />
               </Row>

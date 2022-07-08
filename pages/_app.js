@@ -32,10 +32,14 @@ function MyApp({ Component, pageProps }) {
           onLoaderFinished={() => setProgress(0)}
         />
         {!adminPathChecker.includes("dashboard") &&
-          !adminPathChecker.includes("admin") && <Navbar />}
+          !adminPathChecker.includes("admin") &&
+          !adminPathChecker.includes("tickets") &&
+          !adminPathChecker.includes("orders") && <Navbar />}
         <Component {...pageProps} />
         {!adminPathChecker.includes("dashboard") &&
-          !adminPathChecker.includes("admin") && <Footer />}
+          !adminPathChecker.includes("admin") &&
+          !adminPathChecker.includes("tickets") &&
+          !adminPathChecker.includes("orders") && <Footer />}
       </ContextProvider>
     </>
   );
