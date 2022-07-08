@@ -4,18 +4,26 @@ import { GrNotification, GrClose } from "react-icons/gr";
 import styles from "../../styles/Dashboard.module.css";
 import { Button } from "@mui/material";
 import { useState } from "react";
-import { useStateContext } from '../../contexts/contextProvider';
+import { useStateContext } from "../../contexts/contextProvider";
 
 export default function TopBar() {
   const [userPanel, setUserPanel] = useState(false);
   const [notifyPanel, setNotifyPanel] = useState(false);
-  
+
   const { setSidebarIsOpened } = useStateContext();
 
   return (
-    <div className="d-flex justify-content-between align-items-center py-2 px-4" style={{" zIndex": "99999"}} >
+    <div
+      className="d-flex justify-content-between align-items-center py-2 px-4"
+      style={{ " zIndex": "99999" }}
+    >
       <div>
-        <button className={`my-2 px-2 mx-2 h5  ${styles.buttonEffects}`} onClick={() => {setSidebarIsOpened(true)}}>
+        <button
+          className={`my-2 px-2 mx-2 h5  ${styles.buttonEffects}`}
+          onClick={() => {
+            setSidebarIsOpened(true);
+          }}
+        >
           <FiMenu />
         </button>
       </div>

@@ -5,7 +5,6 @@ const StateContext = createContext();
 export const ContextProvider = ({ children }) => {
   const [sidebarIsOpened, setSidebarIsOpened] = useState(false);
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <StateContext.Provider value={{ sidebarIsOpened, setSidebarIsOpened }}>
       {children}
     </StateContext.Provider>

@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import DashboardWrap from "../Components/DashboardComp/DashboardWrap";
 import { FaUserAlt } from "react-icons/fa";
 import { Button } from "@mui/material";
+import Link from "next/link";
 
 export default function Orders() {
   return (
@@ -91,12 +92,14 @@ export default function Orders() {
               </table>
 
               <div>
-                <Button
-                  className={`materialUiGreenButton my-2 text-white`}
-                  style={{ backgroundColor: "green" }}
-                >
-                  Open New Order
-                </Button>
+                <Link href="/services">
+                  <Button
+                    className={`materialUiGreenButton my-2 text-white`}
+                    style={{ backgroundColor: "green" }}
+                  >
+                    Open New Order
+                  </Button>
+                </Link>
               </div>
             </div>
           </Container>

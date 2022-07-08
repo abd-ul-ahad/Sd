@@ -1,10 +1,9 @@
 import styles from "../styles/Career.module.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { CgSmartphoneChip } from "react-icons/cg";
-import { FaQuestion } from "react-icons/fa";
 import Head from "next/head";
-import Button from "@mui/material/Button";
 import { VacancyPanel, CoreValuesPanel } from "../Components/DisplayPanels";
+import { CantFind } from "../Components/ServicesOrder";
 
 export default function Career() {
   let vacancies = [
@@ -166,48 +165,7 @@ export default function Career() {
         {/* Vacancies Section Ends */}
       </Container>
 
-      <Row className={`${styles.bgLightGrey} mt-4 pb-4`}>
-        <Col
-          md={12}
-          className="d-flex justify-content-center align-items-center mt-4"
-        >
-          <p className="fs-6 fw-bold">
-            Stucked
-            <FaQuestion className={`${styles.colorRed} `} />
-          </p>
-        </Col>
-        <Col
-          md={12}
-          className="d-flex justify-content-center align-items-center mb-3"
-        >
-          <div>
-            <h1 className="fw-bold">
-              Can&#39;t find what you&#39;re looking for?
-            </h1>
-          </div>
-        </Col>
-        <Row className="d-flex justify-content-center align-items-center ">
-          <Col
-            md={7}
-            className="d-flex justify-content-center align-items-center mb-3"
-          >
-            <p className="text-center">
-              We&#39;re always looking for people with unique skills. Send us
-              your CV and we&#39;ll get in touch when we have an opening that
-              matches your expectations. Let&#39;s stay in touch by subscribing
-              to our newsletter.
-            </p>
-          </Col>
-          <Col
-            md={12}
-            className="d-flex justify-content-center align-items-center"
-          >
-            <Button className={`${styles.applyBtn} materialUiButton mt-2 mb-4`}>
-              Get in Touch.
-            </Button>
-          </Col>
-        </Row>
-      </Row>
+      <CantFind />
     </div>
   );
 }

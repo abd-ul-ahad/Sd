@@ -24,7 +24,6 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <>
       <ContextProvider>
         <LoadingBar
           color="#E71B1E"
@@ -41,7 +40,6 @@ function MyApp({ Component, pageProps }) {
           !adminPathChecker.includes("tickets") &&
           !adminPathChecker.includes("orders") && <Footer />}
       </ContextProvider>
-    </>
   );
 }
 

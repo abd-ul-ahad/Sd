@@ -38,6 +38,10 @@ ul {
   margin-bottom: 0 !important;
 }
 
+textarea {
+  resize: none !important; 
+}
+
 .typingWrap {
   display: inline-block;
 }
