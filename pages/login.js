@@ -52,17 +52,15 @@ export default function Login() {
       });
       const res2 = await res.json();
       if (res2.error) {
-        console.log(`${email} anddd ${password}`);
         console.log(res);
       } else {
-        console.log(res2);
-        cookie.set("token", res.token);
+        cookie.set("token", res2);
         console.log("Login Successful!!!!!!!!!!!!");
         router.push("/dashboard");
-        setUserStatusToken(res.token);
-        console.log(userStatusToken);
-        var decoded = jwt.decode("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyZDJhYmIxOGZmZDg4NDAzZDM4ODZkZSIsImVtYWlsIjoiYWhhZEBzb21lb25lLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEyJDMxMnJLcUJpekhlOW4uVEljN1hlSC50QkkuWFB6SDZzTk1PbzVoeTBMc0Mzdy5ET1B5LzVlIiwiZnVsbE5hbWUiOiJBYmR1bCBBaGFkIiwiX192IjowfSwiaWF0IjoxNjU3OTgzMDg3LCJleHAiOjE2NTc5ODY2ODd9.FzCCqx1Ggfpv90zMHlsjkZPIFcxMGt-m0a-FNe5q_mo");
-        console.log(`JWT: ${decoded}`);
+        setUserStatusToken(res2);
+        localStorage.setItem("tokken", JSON.stringify(res2.token));
+        var decoded = jwt.decode(JSON.stringify(res2.token));
+        console.log(decoded);
       }
     }
   };

@@ -9,6 +9,8 @@ import { useRouter } from "next/router";
 import { ContextProvider } from "../contexts/contextProvider";
 
 function MyApp({ Component, pageProps }) {
+  
+
   const router = useRouter();
   const [progress, setProgress] = useState(0);
   const { pathname } = router;

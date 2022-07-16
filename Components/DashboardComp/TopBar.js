@@ -120,8 +120,8 @@ export const UserProfilePanel = ({ setUserPanel }) => {
       </div>
       <div>
         <Button variant="contained" className={`materialUiButton my-4 w-100`} onClick={() => {
-          cookie.remove('token');
-          router.push("/");
+          localStorage.clear();
+          location.replace("/");
         }}>
           Log Out
         </Button>

@@ -6,7 +6,9 @@ import { RiAccountCircleFill } from "react-icons/ri";
 import { useStateContext } from "../contexts/contextProvider";
 
 export default function Navbar() {
-  const { userStatusToken, setUserStatusToken } = useStateContext();
+  const { userStatusToken } = useStateContext();
+
+  console.log(userStatusToken);
 
   const openCloseMenu = () => {
     var x = document.getElementById("_nav-div");
@@ -66,7 +68,7 @@ export default function Navbar() {
             </Link>
           </li>
 
-          {userStatusToken ? (
+          {!userStatusToken ? (
             <li>
               <Link href="/login">
                 <a className="mb-4">
