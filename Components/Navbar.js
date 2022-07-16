@@ -3,8 +3,11 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import Link from "next/link";
 import Image from "react-bootstrap/Image";
 import { RiAccountCircleFill } from "react-icons/ri";
+import { useStateContext } from "../contexts/contextProvider";
 
 export default function Navbar() {
+  const { userStatusToken, setUserStatusToken } = useStateContext();
+
   const openCloseMenu = () => {
     var x = document.getElementById("_nav-div");
     if (x.className === "nav-div") {
@@ -63,21 +66,23 @@ export default function Navbar() {
             </Link>
           </li>
 
-          <li>
-            <Link href="/login">
-              <a className="mb-4">
-                <Button variant="contained">Login</Button>
-              </a>
-            </Link>
-          </li>
-
-          <li style={{position: "relative", top: "8px"}}>
-            <Link href="/dashboard">
+          {userStatusToken ? (
+            <li>
+              <Link href="/login">
+                <a className="mb-4">
+                  <Button variant="contained">Login</Button>
+                </a>
+              </Link>
+            </li>
+          ) : (
+            <li style={{ position: "relative", top: "8px" }}>
+              <Link href="/dashboard">
                 <button className="buttonEffects h4">
                   <RiAccountCircleFill />
                 </button>
-            </Link>
-          </li>
+              </Link>
+            </li>
+          )}
 
           <li>
             <a className="menu-icon" onClick={openCloseMenu}>

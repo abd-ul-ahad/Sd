@@ -4,23 +4,66 @@ import styles from "../styles/LoginSignUp.module.css";
 import Link from "next/link";
 import Head from "next/head";
 import { useState } from "react";
-import { Image } from "react-bootstrap";
+import baseUrl from "../helpers/baseUrl";
+import cookie from "js-cookie";
+import { useRouter } from "next/router";
+import { useStateContext } from "../contexts/contextProvider";
+
+var jwt = require("jsonwebtoken");
 
 export default function Login() {
+  const { userStatusToken, setUserStatusToken } = useStateContext();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
+
+  ///////
+  const [emailValid, setEmailValid] = useState(false);
+  ///////
 
   const emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-  const EmailValidator = () => {
+  const handleLogin = async (e) => {
     var x = document.getElementById("email_");
 
     if (emailReg.test(email)) {
       x.classList.remove("is-invalid");
       x.classList.add("is-valid");
+      setEmailValid(true);
     } else {
       x.classList.remove("is-valid");
       x.classList.add("is-invalid");
+      setEmailValid(false);
+    }
+    console.log("Running");
+    e.preventDefault();
+
+    if (emailValid) {
+      const res = await fetch(`${baseUrl}/api/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+      const res2 = await res.json();
+      if (res2.error) {
+        console.log(`${email} anddd ${password}`);
+        console.log(res);
+      } else {
+        console.log(res2);
+        cookie.set("token", res.token);
+        console.log("Login Successful!!!!!!!!!!!!");
+        router.push("/dashboard");
+        setUserStatusToken(res.token);
+        console.log(userStatusToken);
+        var decoded = jwt.decode("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyZDJhYmIxOGZmZDg4NDAzZDM4ODZkZSIsImVtYWlsIjoiYWhhZEBzb21lb25lLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEyJDMxMnJLcUJpekhlOW4uVEljN1hlSC50QkkuWFB6SDZzTk1PbzVoeTBMc0Mzdy5ET1B5LzVlIiwiZnVsbE5hbWUiOiJBYmR1bCBBaGFkIiwiX192IjowfSwiaWF0IjoxNjU3OTgzMDg3LCJleHAiOjE2NTc5ODY2ODd9.FzCCqx1Ggfpv90zMHlsjkZPIFcxMGt-m0a-FNe5q_mo");
+        console.log(`JWT: ${decoded}`);
+      }
     }
   };
 
@@ -38,7 +81,7 @@ export default function Login() {
           <Col lg={5}>
             <form className="d-flex justify-content-center align-items-center flex-column">
               <p className="h3 my-2 align-self-start">Login to</p>
-              <Image
+              <img
                 src="/images/home/logo.png"
                 height={100}
                 alt="SayabiDevs"
@@ -50,13 +93,11 @@ export default function Login() {
                 className={`${styles.inputStyles} px-2 my-2 mx-2 w-100 py-2 form-control`}
                 placeholder="Email"
                 id="email_"
-                onBlur={() => {
-                  EmailValidator();
-                }}
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
               />
+              <div className="valid-feedback mx-3">Looks good!</div>
               <div className="invalid-feedback mx-3">
                 Enter a valid Email Address
               </div>
@@ -66,7 +107,9 @@ export default function Login() {
                 className={`${styles.inputStyles} px-2 my-2 mx-2 w-100 py-2`}
                 placeholder="Password"
                 id="validationCustom01"
-                required
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
 
               <div className="d-flex justify-content-between align-items-center w-100 flex-row">
@@ -95,9 +138,7 @@ export default function Login() {
               <Button
                 variant="contained"
                 className="materialUiButton my-2 w-100 py-2"
-                onClick={() => {
-                  handleLogin();
-                }}
+                onClick={(e) => handleLogin(e)}
               >
                 Login
               </Button>

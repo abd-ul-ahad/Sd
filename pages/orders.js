@@ -5,7 +5,8 @@ import { FaUserAlt } from "react-icons/fa";
 import { Button } from "@mui/material";
 import Link from "next/link";
 
-export default function Orders() {
+export default function Orders({pendingOrders}) {
+  console.log(pendingOrders)
   return (
     <>
       <Head>
@@ -33,31 +34,43 @@ export default function Orders() {
                       style={{ borderRight: "2px solid white" }}
                       className="text-center py-2 px-3"
                     >
-                      ID
-                    </th>
-                    <th
-                      style={{ borderRight: "2px solid white" }}
-                      className="text-center py-2 px-3"
-                    >
-                      Order#
-                    </th>
-                    <th
-                      style={{ borderRight: "2px solid white" }}
-                      className="text-center py-2 px-3"
-                    >
-                      Date
-                    </th>
-                    <th
-                      style={{ borderRight: "2px solid white" }}
-                      className="text-center py-2 px-3"
-                    >
                       Client Name
                     </th>
                     <th
                       style={{ borderRight: "2px solid white" }}
                       className="text-center py-2 px-3"
                     >
-                      Payment Method
+                      Email
+                    </th>
+                    <th
+                      style={{ borderRight: "2px solid white" }}
+                      className="text-center py-2 px-3"
+                    >
+                      Credit Card No
+                    </th>
+                    <th
+                      style={{ borderRight: "2px solid white" }}
+                      className="text-center py-2 px-3"
+                    >
+                      Expiration
+                    </th>
+                    <th
+                      style={{ borderRight: "2px solid white" }}
+                      className="text-center py-2 px-3"
+                    >
+                      CVV
+                    </th>
+                    <th
+                      style={{ borderRight: "2px solid white" }}
+                      className="text-center py-2 px-3"
+                    >
+                      Product Name
+                    </th>
+                    <th
+                      style={{ borderRight: "2px solid white" }}
+                      className="text-center py-2 px-3"
+                    >
+                      Product Requirements
                     </th>
                     <th
                       style={{ borderRight: "2px solid white" }}
@@ -65,29 +78,48 @@ export default function Orders() {
                     >
                       Total
                     </th>
-                    <th
-                      style={{ borderRight: "2px solid white" }}
-                      className="text-center py-2 px-3"
-                    >
-                      Payment Status
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr style={{ borderBottom: "1px solid var(--text-grey)" }}>
-                    <td className="py-2 px-3">2387498</td>
-                    <td className="py-2 px-3">2387</td>
-                    <td className="py-2 px-3">dd/mm/yyyy</td>
-                    <td className="py-2 px-3">Name</td>
-                    <td className="py-2 px-3">Jazz Cash</td>
-                    <td className="py-2 px-3">100,000</td>
-                    <td
-                      className="py-2 px-3 "
-                      style={{ color: "var(--green)" }}
-                    >
-                      Complete
-                    </td>
+                {
+                  pendingOrders.map((data)=>{
+                    const {productName,price,email,requirements,nameOnCard,creditCardNo,expiration,cVV} = data;
+                    return(
+                    <tr style={{ borderBottom: "1px solid var(--text-grey)" }}>
+                      <td className="py-2 px-3">{nameOnCard}</td>
+                      <td className="py-2 px-3">{email}</td>
+                      <td className="py-2 px-3">{creditCardNo}</td>
+                      <td className="py-2 px-3">{expiration}</td>
+                      <td className="py-2 px-3">{cVV}</td>
+                      <td className="py-2 px-3">{productName}</td>
+                      <td className="py-2 px-3">
+                        <input type="checkbox" id="active" for="active"/>
+                        {/* <input type="checkbox" className="close"/> */}
+                        {`Check to See ${productName}'s Product Requirements`}
+                        {/* <label for="active" class="menu-btn"><span></span></label> */}
+                        <label for="active" class="close"></label>
+                        <div class="wrapper" style={{color:"var(--smoke-white)"}}>
+                        <h5 style={{float:"right"}}>Uncheck the Respective Checkbox to Hide Overlay</h5>
+                        <br/><br/>
+                        {requirements}
+                        </div>
+                        <div class="content">
+                              <div class="title">
+                        Fullscreen Overlay Navigation Bar</div>
+                        <p>
+                        (Hamburger Menu-2)</p>
+                        </div>
+                      </td>
+                      <td
+                        className="py-2 px-3 "
+                        style={{ color: "var(--green)" }}
+                      >
+                        {price}
+                      </td>
                   </tr>
+                    );
+                  })
+                }
                 </tbody>
               </table>
 
@@ -107,4 +139,14 @@ export default function Orders() {
       </DashboardWrap>
     </>
   );
+}
+
+export async function getStaticProps(){
+  const res = await fetch('http://localhost:3000/api/pendingOrder')
+  const data = await res.json()
+  return {
+    props:{
+      pendingOrders:data
+    }
+  }
 }

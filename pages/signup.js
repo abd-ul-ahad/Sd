@@ -3,15 +3,24 @@ import Button from "@mui/material/Button";
 import styles from "../styles/LoginSignUp.module.css";
 import Link from "next/link";
 import Head from "next/head";
+import { Image } from "react-bootstrap";
 import { useState } from "react";
 import Script from "next/script";
-import { Image } from "react-bootstrap";
+import { useRouter } from "next/router";
+import baseUrl from "../helpers/baseUrl";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [fullName, setFullName] = useState("");
+  const router = useRouter();
+
+  ///////
+  const [emailValid, setEmailValid] = useState(false);
+  const [nameValid, setNameValid] = useState(false);
+  const [passValid, setPassValid] = useState(false);
+  ///////
 
   const fullNameReg = /^[a-zA-Z]/;
   const emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -26,9 +35,11 @@ export default function Signup() {
     if (emailReg.test(email)) {
       x.classList.remove("is-invalid");
       x.classList.add("is-valid");
+      setEmailValid(true);
     } else {
       x.classList.remove("is-valid");
       x.classList.add("is-invalid");
+      setEmailValid(false);
     }
   };
 
@@ -37,9 +48,11 @@ export default function Signup() {
     if (fullNameReg.test(fullName) && fullName !== "") {
       nameIn.classList.remove("is-invalid");
       nameIn.classList.add("is-valid");
+      setNameValid(true);
     } else {
       nameIn.classList.remove("is-valid");
       nameIn.classList.add("is-invalid");
+      setNameValid(false);
     }
   };
 
@@ -82,11 +95,13 @@ export default function Signup() {
       x.classList.add("is-valid");
       y.classList.remove("is-invalid");
       y.classList.add("is-valid");
+      setPassValid(true);
     } else {
       x.classList.remove("is-valid");
       x.classList.add("is-invalid");
       y.classList.remove("is-valid");
       y.classList.add("is-invalid");
+      setPassValid(false);
     }
   };
 
@@ -102,6 +117,31 @@ export default function Signup() {
       return true;
     }
   }
+
+  const SubmitSignUp = async (e) => {
+    e.preventDefault();
+    if (emailValid && passValid && nameValid) {
+      console.log(`email${email} and password ${password}`);
+      const res = await fetch(`${baseUrl}/api/signup`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          fullName,
+        }),
+      });
+      const res2 = await res.json();
+      if (res2.error) {
+        console.log(`testing error`);
+      } else {
+        console.log(`testing Success`);
+        router.push("/login");
+      }
+    }
+  };
 
   return (
     <>
@@ -121,7 +161,7 @@ export default function Signup() {
           <Col lg={5}>
             <form className="d-flex justify-content-center align-items-center flex-column">
               <p className="h3 my-2 align-self-start">Welcome to</p>
-              <Image
+              <img
                 src="/images/home/logo.png"
                 height={100}
                 alt="SayabiDevs"
@@ -242,6 +282,7 @@ export default function Signup() {
               <Button
                 variant="contained"
                 className="materialUiButton my-2 w-100 py-2"
+                onClick={(e) => SubmitSignUp(e)}
               >
                 Sign Up
               </Button>

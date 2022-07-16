@@ -1,12 +1,19 @@
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import baseUrl from '../../helpers/baseUrl'
 
 export default function Checkout() {
-  const router = useRouter();
+  const router = useRouter()
   const { slug } = router.query;
-  const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [requirements, setRequirements] = useState("");
+  const [nameOnCard, setNameOnCard] = useState("");
+  const [creditCardNo, setCreditCardNo] = useState("");
+  const [expiration, setExpiration] = useState("");
+  const [cVV, setCVV] = useState("");
+  const [responseCheckout, setResponseCheckout] = useState("");
 
   const fullNameReg = /^[a-zA-Z]/;
   const emailReg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -33,6 +40,94 @@ export default function Checkout() {
       nameIn.classList.add("is-invalid");
     }
   };
+
+  const saveCheckout = async (e) => {
+    e.preventDefault()
+    console.log(router.asPath);
+    const currPath = router.asPath;
+    let price=0;
+    let productName = ""
+    if(currPath.includes("mobile-standard")){
+      price="$38"
+      productName="Mobile App - Standard"
+    }
+    else if(currPath.includes("mobile-pro")){
+      price="$100"
+      productName="Mobile App - Pro"
+    }
+    else if(currPath.includes("mobile-business")){
+      price="$200"
+      productName="Mobile App - Business"
+    }
+  
+    else if(currPath.includes("web-app-standard")){
+      price="$38"
+      productName="Web App - Standard"
+    }
+    else if(currPath.includes("web-app-pro")){
+      price="$100"
+      productName="Web App - Pro"
+    }
+    else if(currPath.includes("web-app-business")){
+      price="$200"
+      productName="Web App - Business"
+    }
+  
+    else if(currPath.includes("data-science-standard")){
+      price="$38"
+      productName="Data Science - Standard"
+    }
+    else if(currPath.includes("data-science-pro")){
+      price="$100"
+      productName="Data Science - Pro"
+    }
+    else if(currPath.includes("data-science-business")){
+      price="$200"
+      productName="Data Science - Business"
+    }
+  
+    else if(currPath.includes("ai-standard")){
+      price="$38"
+      productName="AI/ML - Standard"
+    }
+    else if(currPath.includes("ai-pro")){
+      price="$100"
+      productName="AI/ML - Pro"
+    }
+    else if(currPath.includes("ai-business")){
+      price="$200"
+      productName="AI/ML - Business"
+    }
+    // console.log(`fullName ${fullName} email ${email} zipCode ${zipCode} message ${message} price ${price}`)
+    const res=await fetch(`${baseUrl}/api/checkout`,{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        productName,
+        price,
+        email,
+        requirements,
+        nameOnCard,
+        creditCardNo,
+        expiration,
+        cVV
+      })
+    })
+    const res2 = await res.json()
+    if(res2.error){
+      console.log(`Error while saving checkout`)
+      setResponseCheckout(res2.error)
+      if(res2.error=="User is not registered. Please signup first!"){
+        router.push('/signup')
+      }
+    }else{
+      console.log(`Checkout Saved Successfully`)
+      setResponseCheckout("Checkout Saved Successfully")
+      // router.push('/login')
+    }
+  }
 
   return (
     <div className="container">
@@ -84,46 +179,21 @@ export default function Checkout() {
                   </div>
                 </div>
 
-                <div className="col-md-3">
-                  <input
-                    type="text"
-                    className="form-control shadow-none"
-                    id="zip"
-                    placeholder="Zip Code"
-                    required=""
-                  />
-                  <div className="invalid-feedback">Zip code required.</div>
-                </div>
-
                 <div className="col-md-12">
                   <textarea
                     type="text"
                     id="zip"
+                    onChange={(e) => {
+                      setRequirements(e.target.value);
+                    }}
                     rows={10}
                     className="py-3 px-3 w-100 form-control shadow-none"
-                    placeholder="Message (Optional)"
+                    placeholder="Please write complete requirements of your product here"
                   ></textarea>
                 </div>
               </div>
 
               <hr className="my-4" />
-
-              <h4 className="mb-3">Payment</h4>
-
-              <div className="my-3">
-                <div className="form-check">
-                  <input
-                    id="debit"
-                    name="paymentMethod"
-                    type="radio"
-                    className="form-check-input"
-                    required=""
-                  />
-                  <label className="form-check-label" htmlFor="debit">
-                    Debit card
-                  </label>
-                </div>
-              </div>
 
               <div className="row gy-3">
                 <div className="col-md-6">
@@ -136,6 +206,9 @@ export default function Checkout() {
                     id="cc-name"
                     placeholder=""
                     required=""
+                    onChange={(e) => {
+                      setNameOnCard(e.target.value);
+                    }}
                   />
                   <small className="text-muted">
                     Full name as displayed on card
@@ -155,6 +228,9 @@ export default function Checkout() {
                     id="cc-number"
                     placeholder=""
                     required=""
+                    onChange={(e) => {
+                      setCreditCardNo(e.target.value);
+                    }}
                   />
                   <div className="invalid-feedback">
                     Credit card number is required
@@ -171,6 +247,9 @@ export default function Checkout() {
                     id="cc-expiration"
                     placeholder=""
                     required=""
+                    onChange={(e) => {
+                      setExpiration(e.target.value);
+                    }}
                   />
                   <div className="invalid-feedback">
                     Expiration date required
@@ -187,6 +266,9 @@ export default function Checkout() {
                     id="cc-cvv"
                     placeholder=""
                     required=""
+                    onChange={(e) => {
+                      setCVV(e.target.value);
+                    }}
                   />
                   <div className="invalid-feedback">Security code required</div>
                 </div>
@@ -197,9 +279,11 @@ export default function Checkout() {
               <Button
                 variant="contained"
                 className={`materialUiButton my-4 w-100`}
+                onClick={(e)=>saveCheckout(e)}
               >
                 Check Out
               </Button>
+              <p>{responseCheckout}</p>
             </form>
           </div>
         </div>
@@ -209,6 +293,62 @@ export default function Checkout() {
 }
 
 const Cart = () => {
+  const router = useRouter()
+  const currPath = router.asPath
+  let price=0;
+  let productName = ""
+  if(currPath.includes("mobile-standard")){
+    price="$38"
+    productName="Mobile App - Standard"
+  }
+  else if(currPath.includes("mobile-pro")){
+    price="$100"
+    productName="Mobile App - Pro"
+  }
+  else if(currPath.includes("mobile-business")){
+    price="$200"
+    productName="Mobile App - Business"
+  }
+
+  else if(currPath.includes("web-app-standard")){
+    price="$38"
+    productName="Web App - Standard"
+  }
+  else if(currPath.includes("web-app-pro")){
+    price="$100"
+    productName="Web App - Pro"
+  }
+  else if(currPath.includes("web-app-business")){
+    price="$200"
+    productName="Web App - Business"
+  }
+
+  else if(currPath.includes("data-science-standard")){
+    price="$38"
+    productName="Data Science - Standard"
+  }
+  else if(currPath.includes("data-science-pro")){
+    price="$100"
+    productName="Data Science - Pro"
+  }
+  else if(currPath.includes("data-science-business")){
+    price="$200"
+    productName="Data Science - Business"
+  }
+
+  else if(currPath.includes("ai-standard")){
+    price="$38"
+    productName="AI/ML - Standard"
+  }
+  else if(currPath.includes("ai-pro")){
+    price="$100"
+    productName="AI/ML - Pro"
+  }
+  else if(currPath.includes("ai-business")){
+    price="$200"
+    productName="AI/ML - Business"
+  }
+  
   return (
     <div className="col-md-5 col-lg-4 order-md-last">
       <h4 className="d-flex justify-content-between align-items-center mb-3">
@@ -218,14 +358,13 @@ const Cart = () => {
         <li className="list-group-item d-flex justify-content-between lh-sm">
           <div>
             <h6 className="my-0">Product name</h6>
-            <small className="text-muted">Brief description</small>
           </div>
-          <span className="text-muted">$12</span>
+          <span className="text-muted">{productName}</span>
         </li>
 
         <li className="list-group-item d-flex justify-content-between">
           <span>Total (USD)</span>
-          <strong>$20</strong>
+          <strong>{price}</strong>
         </li>
       </ul>
     </div>

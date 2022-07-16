@@ -3,8 +3,12 @@ import { Container } from "react-bootstrap";
 import DashboardWrap from "../../Components/DashboardComp/DashboardWrap";
 import { RiAdminFill } from "react-icons/ri";
 import { Button } from "@mui/material";
+import Checkout from '../../models/CheckoutModel'
 
-export default function Orders() {
+export default function Orders({pendingOrders}) {
+  console.log("Ok")
+  console.log(pendingOrders)
+
   return (
     <>
       <Head>
@@ -131,7 +135,7 @@ export default function Orders() {
                   </tr>
                 </tbody>
               </table>
-
+              
               <div>
                 <Button
                   className={`materialUiGreenButton my-2 text-white`}
@@ -153,4 +157,14 @@ export default function Orders() {
       </DashboardWrap>
     </>
   );
+}
+
+export async function getStaticProps(){
+  const res = await fetch('http://localhost:3000/api/pendingOrder')
+  const data = await res.json()
+  return{
+    props:{
+      pendingOrders:data
+    }
+  }
 }

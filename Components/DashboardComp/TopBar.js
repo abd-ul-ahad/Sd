@@ -5,8 +5,11 @@ import styles from "../../styles/Dashboard.module.css";
 import { Button } from "@mui/material";
 import { useState } from "react";
 import { useStateContext } from "../../contexts/contextProvider";
+import cookie from "js-cookie";
+import { useRouter } from "next/router";
 
 export default function TopBar() {
+  const router = useRouter();
   const [userPanel, setUserPanel] = useState(false);
   const [notifyPanel, setNotifyPanel] = useState(false);
 
@@ -53,7 +56,7 @@ export default function TopBar() {
               setUserPanel(true);
             }}
           >
-            <span className="fw-bold">Hi, </span>Name <BiChevronDown />
+            <span className="fw-bold">Hi, </span>User <BiChevronDown />
           </button>
           {userPanel && <UserProfilePanel setUserPanel={setUserPanel} />}
         </div>
@@ -95,6 +98,7 @@ const NotifiPanel = ({ setNotifyPanel }) => {
 };
 
 export const UserProfilePanel = ({ setUserPanel }) => {
+  const router = useRouter();
   return (
     <div className={`position-absolute ${styles.dropDownBox}`}>
       <div className="d-flex justify-content-between align-items-center w-100">
@@ -115,7 +119,10 @@ export const UserProfilePanel = ({ setUserPanel }) => {
         </p>
       </div>
       <div>
-        <Button variant="contained" className={`materialUiButton my-4 w-100`}>
+        <Button variant="contained" className={`materialUiButton my-4 w-100`} onClick={() => {
+          cookie.remove('token');
+          router.push("/");
+        }}>
           Log Out
         </Button>
       </div>
